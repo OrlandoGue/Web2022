@@ -19,10 +19,11 @@ export class UsuarioService {
 
     store(usuario: UsuarioModel): Observable<UsuarioModel> {
       return this.http.post<UsuarioModel>(`${this.url}/usuarios`, {
-        nombre: usuario.nombre,
-        apellidos: usuario.apellidos,
-        telefono: usuario.telefono,
-        correo: usuario.correo
+        Nombre: usuario.nombre,
+        Apellidos: usuario.apellidos,
+        Telefono: usuario.telefono,
+        Correo: usuario.correo,
+        Password: ' '
       });
     }
 
@@ -37,10 +38,10 @@ export class UsuarioService {
 
     update(usuario: UsuarioModel): Observable<UsuarioModel> {
       return this.http.patch<UsuarioModel>(`${this.url}/usuarios/${usuario.id}`, {
-        nombre: usuario.nombre,
-        apellidos: usuario.apellidos,
-        telefono: usuario.telefono,
-        correo: usuario.correo
+        Nombre: usuario.nombre,
+        Apellidos: usuario.apellidos,
+        Telefono: usuario.telefono,
+        Correo: usuario.correo
       }, {
         // Le paso el token a la solicitud
         headers: new HttpHeaders({
