@@ -1,6 +1,6 @@
-export class VueloModelo{
-    id?: String;
-    fecha_inicio?: String;
+export class VueloModel{
+    id?: string;
+    fecha_inicio?: string;
     hora_inicio?: string;
     fecha_fin?: string;
     hora_fin?: string;
