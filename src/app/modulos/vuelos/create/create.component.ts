@@ -35,7 +35,7 @@ export class CreateComponent implements OnInit {
     vuelo.hora_inicio = this.fgValidacion.controls["hora_inicio"].value as string;
     vuelo.fecha_fin = new Date(this.fgValidacion.controls["fecha_fin"].value as string) as Date;
     vuelo.hora_fin = this.fgValidacion.controls["hora_fin"].value as string;
-    vuelo.asientos_vendidos = Number(this.fgValidacion.controls["asientos_vendidos"].value) as Number;
+    vuelo.asientos_vendidos = Number(this.fgValidacion.controls["asientos_vendidos"].value) as number;
     vuelo.nombre_piloto = this.fgValidacion.controls["nombre_piloto"].value as string;
     vuelo.ruta = this.fgValidacion.controls["ruta"].value as string;
  
