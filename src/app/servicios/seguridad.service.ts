@@ -15,10 +15,10 @@ export class SeguridadService {
       this.verificarSesion();
     }
   
-  login(correo: string, clave: string): Observable<any> {
+  login(Correo: string, clave: string): Observable<any> {
     //Hacemos la solicitud al servicio web de login pasandole usuario y clave
     return this.http.post<any>(`${this.url}/login`, {
-      usuario: correo,
+      usuario: Correo,
       password: clave
     }, {
       headers: new HttpHeaders({
@@ -36,7 +36,7 @@ export class SeguridadService {
       // Definimos los datos a almacenar
       let payload = {
         id: data?.data.id,
-        username: data?.data.nombre + " " + data?.data.apellidos ,
+        username: data?.data.Nombre + " " + data?.data.Apellidos ,
         token: data.token,
         isLoggedIn: true
       };

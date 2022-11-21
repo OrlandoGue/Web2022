@@ -20,10 +20,10 @@ export class EditComponent implements OnInit {
 
     fgValidacion = this.fb.group({
       id: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
-      apellidos: ['', [Validators.required]],
-      telefono: ['', [Validators.required, Validators.minLength(6)]],
-      correo: ['', [Validators.required, Validators.email]],
+      Nombre: ['', [Validators.required]],
+      Apellidos: ['', [Validators.required]],
+      Telefono: ['', [Validators.required, Validators.minLength(6)]],
+      Correo: ['', [Validators.required, Validators.email]],
     });
 
 id: string=''
@@ -32,19 +32,19 @@ id: string=''
   this.usuarioService.getWithId(id).subscribe((data: UsuarioModel) => {
     console.log(data)
     this.fgValidacion.controls["id"].setValue(id)
-    //this.fgValidacion.controls["nombre"].setValue(data.nombre)
-    //this.fgValidacion.controls["apellidos"].setValue(data.apellidos)
-    //this.fgValidacion.controls["correo"].setValue(data.correo)
-    //this.fgValidacion.controls["telefono"].setValue(data.telefono)
+    //this.fgValidacion.controls["Nombre"].setValue(data.Nombre)
+    //this.fgValidacion.controls["Apellidos"].setValue(data.Apellidos)
+    //this.fgValidacion.controls["Correo"].setValue(data.Correo)
+    //this.fgValidacion.controls["Telefono"].setValue(data.Telefono)
   })
   }
   edit(){
     let usuario = new UsuarioModel();
     usuario.id = this.fgValidacion.controls["id"].value as string;
-    usuario.nombre = this.fgValidacion.controls["nombre"].value as string;
-    usuario.apellidos = this.fgValidacion.controls["apellidos"].value as string;
-    usuario.correo = this.fgValidacion.controls["correo"].value as string;
-    usuario.telefono = this.fgValidacion.controls["telefono"].value as string;
+    usuario.Nombre = this.fgValidacion.controls["Nombre"].value as string;
+    usuario.Apellidos = this.fgValidacion.controls["Apellidos"].value as string;
+    usuario.Correo = this.fgValidacion.controls["Correo"].value as string;
+    usuario.Telefono = this.fgValidacion.controls["Telefono"].value as string;
  
     this.usuarioService.update(usuario).subscribe((data: UsuarioModel)=> {
       Swal.fire('Editado Correctamente!', '', 'success')
@@ -64,10 +64,10 @@ id: string=''
     this.usuarioService.getWithId(id).subscribe((data: UsuarioModel) => {
       console.log(data)
       this.fgValidacion.controls["id"].setValue(id)
-      this.fgValidacion.controls["nombre"].setValue(data.nombre as string)
-      this.fgValidacion.controls["apellidos"].setValue(data.apellidos as string)
-      this.fgValidacion.controls["correo"].setValue(data.correo as string)
-      this.fgValidacion.controls["telefono"].setValue(data.telefono as string)
+      this.fgValidacion.controls["Nombre"].setValue(data.Nombre as string)
+      this.fgValidacion.controls["Apellidos"].setValue(data.Apellidos as string)
+      this.fgValidacion.controls["Correo"].setValue(data.Correo as string)
+      this.fgValidacion.controls["Telefono"].setValue(data.Telefono as string)
     })
   }
 

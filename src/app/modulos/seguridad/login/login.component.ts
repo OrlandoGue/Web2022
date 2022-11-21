@@ -13,7 +13,7 @@ import Swal from 'sweetalert2'
 export class LoginComponent implements OnInit {
 
   fgValidacion = this.fb.group({
-    correo: ['', [Validators.required, Validators.email]],
+    Correo: ['', [Validators.required, Validators.email]],
     clave: ['', [Validators.required]]
   });
   constructor(private fb: FormBuilder, 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   identificarUsuario(){
-    let usuario = this.fgValidacion.controls["correo"].value as string;
+    let usuario = this.fgValidacion.controls["Correo"].value as string;
     let clave = this.fgValidacion.controls["clave"].value as string;
     
     let claveCifrada = cryptoJS.MD5(clave).toString();

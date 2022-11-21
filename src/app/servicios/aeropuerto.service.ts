@@ -19,7 +19,7 @@ export class AeropuertoService {
 
     store(aeropuerto: AeropuertoModel): Observable<AeropuertoModel> {
       return this.http.post<AeropuertoModel>(`${this.url}/aeropuertos`, {
-        nombre: aeropuerto.nombre,
+        Nombre: aeropuerto.Nombre,
         ciudad: aeropuerto.ciudad,
         pais: aeropuerto.pais,
         coordenada_x: Number(aeropuerto.coordenada_x),
@@ -44,7 +44,7 @@ export class AeropuertoService {
 
     update(aeropuerto: AeropuertoModel): Observable<AeropuertoModel> {
       return this.http.patch<AeropuertoModel>(`${this.url}/aeropuertos/${aeropuerto.id}`, {
-        nombre: aeropuerto.nombre,
+        Nombre: aeropuerto.Nombre,
         ciudad: aeropuerto.ciudad,
         pais: aeropuerto.pais,
         coordenada_x: Number(aeropuerto.coordenada_x),

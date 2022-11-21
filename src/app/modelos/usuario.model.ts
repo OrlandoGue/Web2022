@@ -1,9 +1,9 @@
 export class UsuarioModel{
     id?: String;
-    nombre?: String;
-    apellidos?: String;
-    telefono?: String;
-    correo?: String;
+    Nombre?: String;
+    Apellidos?: String;
+    Telefono?: String;
+    Correo?: String;
     token?: String;
     isLoggedIn?: boolean = false;
   }

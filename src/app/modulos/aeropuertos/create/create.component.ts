@@ -17,7 +17,7 @@ export class CreateComponent implements OnInit {
     private router: Router) { }
 
   fgValidacion = this.fb.group({
-    nombre: ['', [Validators.required]],
+    Nombre: ['', [Validators.required]],
     ciudad: ['', [Validators.required]],
     pais: ['', [Validators.required, Validators.minLength(3)]],
     coordenada_x: ['',[Validators.required]],
@@ -31,7 +31,7 @@ export class CreateComponent implements OnInit {
 
   store(){
     let aeropuerto = new AeropuertoModel();
-    aeropuerto.nombre = this.fgValidacion.controls["nombre"].value as string;
+    aeropuerto.Nombre = this.fgValidacion.controls["Nombre"].value as string;
     aeropuerto.ciudad = this.fgValidacion.controls["ciudad"].value as string;
     aeropuerto.pais = this.fgValidacion.controls["pais"].value as string;
     aeropuerto.coordenada_x = this.fgValidacion.controls["coordenada_x"].value as string;
