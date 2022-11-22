@@ -13,7 +13,8 @@ export class VueloService {
     private seguridadService: SeguridadService) { 
       this.token = this.seguridadService.getToken();
     }
-    url = "http://localhost:3000"
+    //url = "http://localhost:3000"
+    url = "https://apimisiontic2022.herokuapp.com"
     token: string = ''
 
     store(vuelo: VueloModel): Observable<VueloModel> {
